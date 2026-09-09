@@ -1,0 +1,48 @@
+{
+  "mode": "deterministic fixture, no model calls",
+  "runs": [
+    "b5fbf1f089f3",
+    "a4b226ecac1a",
+    "70c46cde6e39"
+  ],
+  "instruction_diff": [
+    {
+      "path": "$.config.instruction",
+      "kind": "changed",
+      "before": "trust-result",
+      "after": "verify-freshness"
+    },
+    {
+      "path": "$.steps.decide.action",
+      "kind": "changed",
+      "before": "investigate-latency",
+      "after": "request-fresh-metrics"
+    },
+    {
+      "path": "$.steps.decide.reason",
+      "kind": "changed",
+      "before": "p95 compared to 1000ms threshold",
+      "after": "Evidence is older than 10 minutes"
+    }
+  ],
+  "tool_diff": [
+    {
+      "path": "$.config.instruction",
+      "kind": "changed",
+      "before": "trust-result",
+      "after": "verify-freshness"
+    },
+    {
+      "path": "$.config.tool",
+      "kind": "changed",
+      "before": "stale",
+      "after": "fresh"
+    },
+    {
+      "path": "$.steps.retrieve.age_minutes",
+      "kind": "changed",
+      "before": 180,
+      "after": 3
+    }
+  ]
+}
